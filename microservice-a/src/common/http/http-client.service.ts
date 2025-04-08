@@ -13,7 +13,7 @@ export class HttpClientService {
     private readonly httpService: HttpService,
     private readonly configService: ConfigService,
   ) {
-    this.serviceBUrl = this.configService.get<string>('services.serviceB.url');
+    this.serviceBUrl = this.configService.get<string>('services.serviceB.url') || '';
     if (!this.serviceBUrl) {
       this.logger.warn('Service B URL is not configured properly');
     }
